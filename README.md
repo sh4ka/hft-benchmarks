@@ -426,11 +426,9 @@ Memory allocation test: ~100-500ns per iteration
 
 ### System Requirements
 
-- **x86_64 CPU** with stable TSC (most modern processors)  
+- **x86_64/ARM CPU** with stable TSC (most modern processors), on aarch64 tsc will not be available
 - **Linux, macOS, or Windows**
 - **Rust 1.70+**
-
-**Platform Compatibility Note**: This benchmark crate uses x86_64-specific intrinsics (`core::arch::x86_64`) for high-precision timing via CPU timestamp counters. It will not compile on ARM-based systems (including Apple Silicon Macs). For ARM platforms, consider using alternative timing mechanisms or conditional compilation.
 
 ### Limitations
 
