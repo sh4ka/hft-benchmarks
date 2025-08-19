@@ -1,0 +1,54 @@
+[package]
+name = "hft-benchmarks"
+version = "0.1.0"
+edition = "2021"
+authors = ["HFT Framework Team <hft@rustquant.tech>"]
+description = "High-precision benchmarking tools for high-frequency trading systems with nanosecond-level timing accuracy"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/hft-framework/hft-benchmarks"
+homepage = "https://github.com/hft-framework/hft-benchmarks"
+documentation = "https://docs.rs/hft-benchmarks"
+keywords = ["benchmark", "hft", "trading", "performance", "timing"]
+categories = ["development-tools::profiling", "algorithms", "finance"]
+readme = "README.md"
+exclude = ["BENCHMARKING_GUIDE.md", "BENCHMARK_ROADMAP.md", "QUICK_REFERENCE.md", "benches/"]
+
+[dependencies]
+criterion = { workspace = true }
+jemallocator = { workspace = true }
+libc = { workspace = true }
+ahash = { workspace = true }
+lockfree = { workspace = true }
+num_cpus = { workspace = true }
+fastrand = "2.0"
+
+[lib]
+bench = false
+
+[[bench]]
+name = "memory_bench"
+harness = false
+
+[[bench]]
+name = "timing_bench"
+harness = false
+
+[[bench]]
+name = "server_timing_bench"
+harness = false
+
+[[example]]
+name = "simple_benchmark_example"
+path = "examples/simple_benchmark_example.rs"
+
+[[example]]
+name = "memory_benchmarks"
+path = "examples/memory_benchmarks.rs"
+
+[[example]]
+name = "real_comparison"
+path = "examples/real_comparison.rs"
+
+[[example]]
+name = "custom_benchmark"
+path = "examples/custom_benchmark.rs"
