@@ -14,12 +14,12 @@ readme = "README.md"
 exclude = ["BENCHMARKING_GUIDE.md", "BENCHMARK_ROADMAP.md", "QUICK_REFERENCE.md", "benches/"]
 
 [dependencies]
-criterion = { workspace = true }
-jemallocator = { workspace = true }
-libc = { workspace = true }
-ahash = { workspace = true }
-lockfree = { workspace = true }
-num_cpus = { workspace = true }
+criterion = { version = "0.5", features = ["html_reports"] }
+jemallocator = "0.5"
+libc = "0.2"
+ahash = "0.8"
+lockfree = "0.5"
+num_cpus = "1.16"
 fastrand = "2.0"
 
 [lib]
@@ -52,3 +52,16 @@ path = "examples/real_comparison.rs"
 [[example]]
 name = "custom_benchmark"
 path = "examples/custom_benchmark.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+debug = false
+overflow-checks = false
+
+# Custom profile for benchmarking
+[profile.bench]
+inherits = "release"
+debug = true  # Keep symbols for profiling
