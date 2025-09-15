@@ -2,6 +2,8 @@
 
 High-precision performance measurement tools for Rust applications requiring nanosecond-level timing accuracy.
 
+[![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](https://choosealicense.com/licenses/gpl-3.0/)
+
 ## Quick Start
 
 Add to your `Cargo.toml`:
