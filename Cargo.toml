@@ -1,6 +1,6 @@
 [package]
 name = "hft-benchmarks"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["HFT Framework Team <hft@rustquant.tech>"]
 description = "High-precision benchmarking tools for high-frequency trading systems with nanosecond-level timing accuracy"
